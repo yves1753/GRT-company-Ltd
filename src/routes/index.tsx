@@ -6,9 +6,9 @@ import { Wrench, ShoppingCart, Settings, Cog, ArrowRight, ShieldCheck, Award, Cl
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Generator Kariakoo Ltd — Powering Tanzania" },
+      { title: "GRT Company Ltd — Powering Tanzania" },
       { name: "description", content: "Premier supplier of generators and power electronics in Dar es Salaam. Sales, rentals, installation, and 24/7 maintenance." },
-      { property: "og:title", content: "Generator Kariakoo Ltd — Powering Tanzania" },
+      { property: "og:title", content: "GRT Company Ltd — Powering Tanzania" },
       { property: "og:description", content: "Premier supplier of generators and power electronics in Dar es Salaam." },
     ],
   }),
@@ -53,7 +53,7 @@ function Home() {
               Energy That <span className="text-gradient-amber">Never</span> Sleeps.
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl mb-8">
-              Generator Kariakoo Ltd delivers premium electrical and power electronics solutions —
+              GRT Company Ltd delivers premium electrical and power electronics solutions —
               sales, rentals, repairs and installation across Dar es Salaam and beyond.
             </p>
             <div className="flex flex-wrap gap-4">

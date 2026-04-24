@@ -10,7 +10,7 @@ export function Footer() {
             <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-amber-glow flex items-center justify-center">
               <Zap className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
             </div>
-            <span className="font-display font-bold">Generator Kariakoo</span>
+            <span className="font-display font-bold">GRT Company</span>
           </div>
           <p className="text-sm text-muted-foreground">
             Powering Tanzania with reliable electrical and power electronics solutions.
@@ -38,13 +38,13 @@ export function Footer() {
           <h4 className="font-semibold mb-3 text-sm">Contact</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li className="flex items-center gap-2"><MapPin className="w-4 h-4" /> Kariakoo, Dar es Salaam</li>
-            <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +255 000 000 000</li>
-            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> info@generatorkariakoo.co.tz</li>
+            <li className="flex items-center gap-2"><Phone className="w-4 h-4" /> +255 753 575 5555</li>
+            <li className="flex items-center gap-2"><Mail className="w-4 h-4" /> info@grtcompany.co.tz</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-border py-5 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Generator Kariakoo Ltd. All rights reserved.
+        © {new Date().getFullYear()} GRT Company Ltd. All rights reserved.
       </div>
     </footer>
   );

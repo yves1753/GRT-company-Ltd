@@ -28,10 +28,10 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Generator Kariakoo Ltd — Power Solutions in Tanzania" },
+      { title: "GRT Company Ltd — Power Solutions in Tanzania" },
       { name: "description", content: "Sales, rentals, repairs and installation of generators and power electronics in Dar es Salaam, Tanzania." },
-      { name: "author", content: "Generator Kariakoo Ltd" },
-      { property: "og:title", content: "Generator Kariakoo Ltd" },
+      { name: "author", content: "GRT Company Ltd" },
+      { property: "og:title", content: "GRT Company Ltd" },
       { property: "og:description", content: "Reliable electrical and power electronics solutions across Tanzania." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

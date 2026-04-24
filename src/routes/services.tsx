@@ -6,9 +6,9 @@ import { ShoppingCart, Cog, Wrench, Settings, Check, ArrowRight } from "lucide-r
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Generator Kariakoo Ltd" },
+      { title: "Services — GRT Company Ltd" },
       { name: "description", content: "Generator sales, rentals, repairs, maintenance and installation services across Tanzania." },
-      { property: "og:title", content: "Services — Generator Kariakoo Ltd" },
+      { property: "og:title", content: "Services — GRT Company Ltd" },
       { property: "og:description", content: "Comprehensive generator and power electronics services." },
     ],
   }),
