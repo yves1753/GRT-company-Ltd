@@ -5,9 +5,9 @@ import { Target, Heart, Users, Award } from "lucide-react";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — Generator Kariakoo Ltd" },
-      { name: "description", content: "Established in Dar es Salaam, Generator Kariakoo Ltd delivers electrical and power electronics solutions across Tanzania." },
-      { property: "og:title", content: "About Generator Kariakoo Ltd" },
+      { title: "About Us — GRT Company Ltd" },
+      { name: "description", content: "Established in Dar es Salaam, GRT Company Ltd delivers electrical and power electronics solutions across Tanzania." },
+      { property: "og:title", content: "About GRT Company Ltd" },
       { property: "og:description", content: "Our story, mission and values." },
     ],
   }),
@@ -38,7 +38,7 @@ function About() {
               Built in Dar. <span className="text-gradient-amber">Powering Tanzania.</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Generator Kariakoo Ltd offers a full range of services in Electrical and Power Electronics,
+              GRT Company Ltd offers a full range of services in Electrical and Power Electronics,
               keeping pace with technological advancements to ensure clients are never limited in solutions.
             </p>
           </motion.div>

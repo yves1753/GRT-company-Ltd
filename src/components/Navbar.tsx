@@ -19,8 +19,8 @@ export function Navbar() {
             <Zap className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
           </div>
           <div className="leading-tight">
-            <div className="font-display font-bold text-sm tracking-wide">GENERATOR</div>
-            <div className="text-[10px] text-muted-foreground tracking-[0.2em]">KARIAKOO LTD</div>
+            <div className="font-display font-bold text-sm tracking-wide">GRT</div>
+            <div className="text-[10px] text-muted-foreground tracking-[0.2em]">COMPANY LTD</div>
           </div>
         </Link>
         <nav className="hidden md:flex items-center gap-1">

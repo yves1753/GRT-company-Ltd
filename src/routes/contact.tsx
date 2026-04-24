@@ -6,9 +6,9 @@ import { useState } from "react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Generator Kariakoo Ltd" },
-      { name: "description", content: "Get in touch with Generator Kariakoo Ltd in Dar es Salaam — phone, WhatsApp, email and location." },
-      { property: "og:title", content: "Contact Generator Kariakoo Ltd" },
+      { title: "Contact — GRT Company Ltd" },
+      { name: "description", content: "Get in touch with GRT Company Ltd in Dar es Salaam — phone, WhatsApp, email and location." },
+      { property: "og:title", content: "Contact GRT Company Ltd" },
       { property: "og:description", content: "Reach our team in Dar es Salaam." },
     ],
   }),
@@ -90,9 +90,9 @@ function Contact() {
           {/* Info */}
           <div className="space-y-4">
             {[
-              { icon: Phone, title: "Phone", val: "+255 000 000 000", sub: "Mon - Sat" },
-              { icon: MessageCircle, title: "WhatsApp", val: "+255 000 000 000", sub: "Quick replies" },
-              { icon: Mail, title: "Email", val: "info@generatorkariakoo.co.tz", sub: "24h response" },
+              { icon: Phone, title: "Phone", val: "+255 753 575 5555", sub: "Mon - Sat" },
+              { icon: MessageCircle, title: "WhatsApp", val: "+255 753 575 5555", sub: "Quick replies" },
+              { icon: Mail, title: "Email", val: "info@grtcompany.co.tz", sub: "24h response" },
               { icon: MapPin, title: "Location", val: "Kariakoo, Dar es Salaam", sub: "Tanzania" },
               { icon: Clock, title: "Business hours", val: "Mon – Fri: 8:00 – 18:00", sub: "Sat: 9:00 – 14:00" },
             ].map((c, i) => (
@@ -122,7 +122,7 @@ function Contact() {
       <section className="py-12 px-6">
         <div className="max-w-6xl mx-auto rounded-2xl overflow-hidden border border-border glass">
           <iframe
-            title="Generator Kariakoo Ltd location"
+            title="GRT Company Ltd location"
             src="https://www.openstreetmap.org/export/embed.html?bbox=39.265%2C-6.823%2C39.295%2C-6.808&layer=mapnik&marker=-6.8156%2C39.2803"
             className="w-full h-[420px]"
             loading="lazy"
