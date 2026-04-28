@@ -123,10 +123,10 @@ export function HeroScene() {
         <img
           src={generatorImg}
           alt="Industrial diesel generator by GRT Company Ltd"
-          className="w-[78%] max-w-[560px] object-contain animate-float drop-shadow-[0_30px_60px_rgba(74,158,255,0.35)]"
+          className="w-full h-full object-contain animate-float"
           style={{
-            filter: "drop-shadow(0 0 40px rgba(245,185,66,0.35)) drop-shadow(0 0 80px rgba(74,158,255,0.25))",
-            mixBlendMode: "normal",
+            filter:
+              "drop-shadow(0 25px 35px rgba(0,0,0,0.45)) drop-shadow(0 0 60px rgba(245,185,66,0.25))",
           }}
         />
       </div>
