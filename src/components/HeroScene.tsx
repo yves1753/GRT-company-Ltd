@@ -126,7 +126,11 @@ export function HeroScene() {
           className="w-full h-full object-contain animate-float"
           style={{
             filter:
-              "drop-shadow(0 25px 35px rgba(0,0,0,0.45)) drop-shadow(0 0 60px rgba(245,185,66,0.25))",
+              "drop-shadow(0 30px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 80px rgba(245,185,66,0.18)) drop-shadow(0 0 120px rgba(74,158,255,0.12))",
+            maskImage:
+              "radial-gradient(ellipse 75% 80% at center, #000 70%, transparent 100%)",
+            WebkitMaskImage:
+              "radial-gradient(ellipse 75% 80% at center, #000 70%, transparent 100%)",
           }}
         />
       </div>
