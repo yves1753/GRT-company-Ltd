@@ -1,16 +1,14 @@
 import { Link } from "@tanstack/react-router";
-import { Zap, Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/grt-logo.png";
 
 export function Footer() {
   return (
     <footer className="border-t border-border bg-card/40 mt-20">
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
         <div>
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-amber-glow flex items-center justify-center">
-              <Zap className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
-            </div>
-            <span className="font-display font-bold">GRT Company</span>
+          <div className="mb-4">
+            <img src={logo} alt="GRT Kariakoo Company Limited" className="h-16 w-auto object-contain" />
           </div>
           <p className="text-sm text-muted-foreground">
             Powering Tanzania with reliable electrical and power electronics solutions.

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Zap, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import logo from "@/assets/grt-logo.png";
 
 const links = [
   { to: "/", label: "Home" },
@@ -14,14 +15,12 @@ export function Navbar() {
   return (
     <header className="fixed top-0 inset-x-0 z-50 glass">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-primary to-amber-glow flex items-center justify-center group-hover:rotate-12 transition-transform">
-            <Zap className="w-5 h-5 text-primary-foreground" strokeWidth={2.5} />
-          </div>
-          <div className="leading-tight">
-            <div className="font-display font-bold text-sm tracking-wide">GRT</div>
-            <div className="text-[10px] text-muted-foreground tracking-[0.2em]">COMPANY LTD</div>
-          </div>
+        <Link to="/" className="flex items-center group">
+          <img
+            src={logo}
+            alt="GRT Kariakoo Company Limited logo"
+            className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
+          />
         </Link>
         <nav className="hidden md:flex items-center gap-1">
           {links.map((l) => (
