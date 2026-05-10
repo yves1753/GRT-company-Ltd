@@ -42,6 +42,8 @@ export const Route = createRootRoute({
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" },
     ],
   }),
+  // Full-document <html> shell must not wrap a mount inside <div id="root"> (static / Netlify CSR).
+  // Use a fragment shell so HeadContent + routes render under the existing document from index.html.
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -49,21 +51,17 @@ export const Route = createRootRoute({
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark">
-      <head>
-        <HeadContent />
-      </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
-    </html>
+    <>
+      <HeadContent />
+      {children}
+      <Scripts />
+    </>
   );
 }
 
 function RootComponent() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="dark min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1 pt-16">
         <Outlet />
