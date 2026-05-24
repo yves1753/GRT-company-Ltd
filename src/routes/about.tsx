@@ -1,158 +1,178 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
-import { Target, Heart, Users, Award } from "lucide-react";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { SectionHeading } from "@/components/SectionHeading";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { BrandBadge } from "@/components/BrandBadge";
+import { CLIENT_BRANDS } from "@/lib/brand-logos";
+import {
+  CORE_VALUES,
+  COVERAGE_REGIONS,
+  STATS,
+  TIMELINE,
+  WHY_CHOOSE_GRT,
+} from "@/lib/site-data";
+import { COMPANY_NAME, COMPANY_SHORT, SEO_KEYWORDS, WHATSAPP_URL } from "@/lib/constants";
+import generatorReal from "@/assets/generator-real.png";
+import { CheckCircle2, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Us — GRT Company Ltd" },
-      { name: "description", content: "Established in Dar es Salaam, GRT Company Ltd delivers electrical and power electronics solutions across Tanzania." },
-      { property: "og:title", content: "About GRT Company Ltd" },
-      { property: "og:description", content: "Our story, mission and values." },
+      { title: `About GRT Kariakoo — Perkins Generators & Mining Power Tanzania` },
+      {
+        name: "description",
+        content:
+          "Who is GRT Kariakoo? 12+ years supplying Perkins & Cummins generators in Tanzania. 3-year warranty, nationwide coverage.",
+      },
+      { name: "keywords", content: SEO_KEYWORDS },
+      { property: "og:title", content: `About — ${COMPANY_NAME}` },
     ],
   }),
   component: About,
 });
 
-const values = [
-  { icon: Award, title: "Integrity", desc: "Honest dealings, every time." },
-  { icon: Heart, title: "Reliability", desc: "Systems and people you can count on." },
-  { icon: Target, title: "Commitment", desc: "Going the distance for every client." },
-  { icon: Users, title: "Collaboration", desc: "Stronger together, with our teams and clients." },
-];
-
-const brands = ["Cummins", "Caterpillar", "Perkins", "Volvo", "Kohler", "FG Wilson", "Yamaha", "Honda"];
-
 function About() {
   return (
-    <div>
-      {/* Hero */}
-      <section className="relative pt-28 pb-20 px-6 overflow-hidden">
+    <div className="text-foreground">
+      <section className="relative pt-28 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-grid opacity-30" />
-        <div className="absolute top-20 right-10 w-96 h-96 rounded-full bg-primary/20 blur-3xl" />
-        <div className="absolute bottom-0 left-10 w-96 h-96 rounded-full bg-accent/20 blur-3xl" />
         <div className="relative max-w-5xl mx-auto text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-4">Our story</div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              Built in Dar. <span className="text-gradient-amber">Powering Tanzania.</span>
-            </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              GRT Company Ltd offers a full range of services in Electrical and Power Electronics,
-              keeping pace with technological advancements to ensure clients are never limited in solutions.
-            </p>
-          </motion.div>
+          <p className="text-xs tracking-[0.3em] text-primary uppercase mb-4">About GRT</p>
+          <h1 className="text-5xl md:text-7xl font-bold mb-6">
+            Who We Are &amp; <span className="text-gradient-amber">Why Choose Us</span>
+          </h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            {COMPANY_SHORT} is a Tanzania-based industrial power solutions company. We supply, install, and support generators with real field experience.
+          </p>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <div className="text-xs tracking-[0.3em] text-primary uppercase mb-3">Company</div>
-            <h2 className="text-4xl font-bold mb-6">A team of engineers, technicians and electricians.</h2>
-            <p className="text-muted-foreground mb-4">
-              Established in Dar es Salaam, Tanzania, the company is dedicated to delivering high-quality solutions —
-              including supply, installation, and maintenance of generators and related systems.
+      <section className="py-16 px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">Who is GRT Kariakoo?</h2>
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              Based at Wikicha Tower, Mikocheni, Dar es Salaam, we are Generator Kariakoo Company Ltd — specialists in diesel generators, transformers, ATS systems, water pumps, and industrial machinery.
             </p>
-            <p className="text-muted-foreground">
-              With strong project management and collaboration across teams, we consistently provide reliable,
-              professional, and exceptional services that exceed client expectations.
+            <p className="text-muted-foreground mb-4 leading-relaxed">
+              From Kariakoo we provide fast equipment access for commercial clients in Dar es Salaam, while our technical teams deploy to mining sites in Geita, Chunya, Kahama, and industrial projects in Mwanza and Zanzibar.
             </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="grid grid-cols-2 gap-4"
-          >
-            {[
-              { v: "10+", l: "Years experience" },
-              { v: "500+", l: "Projects delivered" },
-              { v: "50+", l: "Skilled engineers" },
-              { v: "24/7", l: "Field support" },
-            ].map((s) => (
-              <div key={s.l} className="p-6 rounded-xl glass">
-                <div className="text-4xl font-display font-bold text-gradient-amber mb-1">{s.v}</div>
-                <div className="text-sm text-muted-foreground">{s.l}</div>
+            <p className="text-muted-foreground leading-relaxed">
+              Our engineers handle everything from 5kVA home units to 500kVA+ mining installations — including load testing, synchronization, commissioning, and operator training.
+            </p>
+          </div>
+          <div className="industrial-frame overflow-hidden">
+            <img src={generatorReal} alt="GRT Kariakoo generator equipment Dar es Salaam" className="w-full h-80 object-cover" loading="lazy" />
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 bg-card/30 border-y border-border">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading eyebrow="Why GRT" title="Why Customers Choose GRT" />
+          <div className="grid sm:grid-cols-2 gap-6">
+            {WHY_CHOOSE_GRT.map((item) => (
+              <div key={item.title} className="industrial-frame p-6">
+                <h3 className="font-bold text-lg mb-2 text-primary">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
               </div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* Mission */}
-      <section className="py-20 px-6 bg-card/30 border-y border-border">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="p-10 rounded-2xl glass relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-primary/20 blur-3xl" />
-            <Target className="w-12 h-12 text-primary mb-6" />
-            <h3 className="text-3xl font-bold mb-4">Our Mission</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              We firmly believe that electricity is the cornerstone of high-quality life. There will be a never-ending need
-              for products and services to harness and maximize its full potential and use. In doing so, we will be the
-              best-in-class provider of top-notch electrical products and services.
-            </p>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="p-10 rounded-2xl glass relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-accent/20 blur-3xl" />
-            <Heart className="w-12 h-12 text-accent mb-6" />
-            <h3 className="text-3xl font-bold mb-4">Our Values</h3>
-            <p className="text-muted-foreground leading-relaxed">
-              Committed to delivering high-quality products and services that exceed client expectations. We continually
-              invest in modern equipment, facilities, and staff training to serve our customers with excellence and
-              professionalism — guided by integrity, reliability, commitment, and collaboration.
-            </p>
-          </motion.div>
-        </div>
-
-        <div className="max-w-6xl mx-auto mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {values.map((v, i) => (
-            <motion.div
-              key={v.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.05 }}
-              className="text-center p-5 rounded-xl border border-border bg-card/40"
-            >
-              <v.icon className="w-7 h-7 text-primary mx-auto mb-3" />
-              <div className="font-semibold mb-1">{v.title}</div>
-              <div className="text-xs text-muted-foreground">{v.desc}</div>
-            </motion.div>
-          ))}
+      <section className="py-16 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+          <div>
+            <SectionHeading align="left" eyebrow="Experience" title="12+ Years in the Field" />
+            <div className="grid grid-cols-2 gap-4">
+              {STATS.map((s) => (
+                <div key={s.label} className="industrial-frame p-5 text-center">
+                  <p className="text-2xl font-bold text-gradient-amber">
+                    <AnimatedCounter value={s.value} suffix={s.suffix} />
+                  </p>
+                  <p className="text-xs text-muted-foreground mt-1">{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div>
+            <SectionHeading align="left" eyebrow="Coverage" title="Nationwide Service Areas" />
+            <div className="flex flex-wrap gap-2">
+              {COVERAGE_REGIONS.map((r) => (
+                <span key={r} className="rounded-md border border-border px-3 py-2 text-sm">
+                  {r}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Brands */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="text-xs tracking-[0.3em] text-primary uppercase mb-3">Brands we carry</div>
-          <h2 className="text-4xl font-bold mb-12">Trusted by the world's best.</h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {brands.map((b, i) => (
-              <motion.div
-                key={b}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.05 }}
-                className="p-6 rounded-xl glass font-display font-bold text-xl text-muted-foreground hover:text-primary transition-colors"
-              >
-                {b}
-              </motion.div>
+      <section className="py-16 px-6 bg-card/30">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading eyebrow="Warranty & Support" title="3-Year Warranty & After-Sales Service" subtitle="We stay with you after installation — not just at the point of sale." />
+          <ul className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
+            {[
+              "3-year comprehensive warranty on eligible equipment",
+              "24–48 hour technical support response",
+              "Preventive maintenance contracts",
+              "Emergency repairs & genuine spare parts",
+              "Load testing & ATS integration support",
+              "Operator training on commissioning",
+            ].map((item) => (
+              <li key={item} className="flex items-start gap-2 text-sm text-muted-foreground">
+                <CheckCircle2 className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+                {item}
+              </li>
             ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="py-16 px-6">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading eyebrow="Timeline" title="Our Growth Story" />
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {TIMELINE.map((t) => (
+              <div key={t.year} className="industrial-frame p-8">
+                <p className="text-primary font-bold mb-2">{t.year}</p>
+                <h3 className="font-semibold mb-2">{t.title}</h3>
+                <p className="text-sm text-muted-foreground">{t.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 border-t border-border">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading eyebrow="Values" title="What We Stand For" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
+            {CORE_VALUES.map((v) => (
+              <div key={v.title} className="industrial-frame p-6 text-center">
+                <v.icon className="h-8 w-8 text-primary mx-auto mb-3" />
+                <h3 className="font-semibold mb-2">{v.title}</h3>
+                <p className="text-xs text-muted-foreground">{v.desc}</p>
+              </div>
+            ))}
+          </div>
+          <SectionHeading eyebrow="Brands" title="Equipment We Supply & Service" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {CLIENT_BRANDS.map((brand) => (
+              <BrandBadge key={brand.name} brand={brand} variant="card" />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-6 text-center pb-24">
+        <div className="max-w-xl mx-auto industrial-frame p-10">
+          <h2 className="text-2xl font-bold mb-4">Ready to work with GRT?</h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Link to="/contact" className="industrial-cta">Get a Quote</Link>
+            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-md bg-[#25D366] px-6 py-3 text-sm font-semibold text-white">
+              <MessageCircle className="h-4 w-4" /> WhatsApp
+            </a>
           </div>
         </div>
       </section>

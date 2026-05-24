@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 36" role="img" aria-label="Volvo Penta">
+  <circle cx="18" cy="18" r="14" fill="none" stroke="#003057" stroke-width="2.5"/>
+  <path d="M18 6 L26 30 L10 30 Z" fill="#003057"/>
+  <text x="95" y="24" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700" fill="#003057" letter-spacing="0.06em">VOLVO PENTA</text>
+</svg>

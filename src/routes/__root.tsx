@@ -1,6 +1,8 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
+import { COMPANY_NAME, SEO_HOME_DESCRIPTION, SEO_HOME_TITLE, SEO_KEYWORDS } from "@/lib/constants";
 
 import appCss from "../styles.css?url";
 
@@ -28,18 +30,19 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "GRT Company Ltd — Power Solutions in Tanzania" },
-      { name: "description", content: "Sales, rentals, repairs and installation of generators and power electronics in Dar es Salaam, Tanzania." },
-      { name: "author", content: "GRT Company Ltd" },
-      { property: "og:title", content: "GRT Company Ltd" },
-      { property: "og:description", content: "Reliable electrical and power electronics solutions across Tanzania." },
+      { title: SEO_HOME_TITLE },
+      { name: "description", content: SEO_HOME_DESCRIPTION },
+      { name: "keywords", content: SEO_KEYWORDS },
+      { name: "author", content: COMPANY_NAME },
+      { property: "og:title", content: COMPANY_NAME },
+      { property: "og:description", content: "Reliable industrial power solutions across Tanzania." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" },
     ],
   }),
   // Full-document <html> shell must not wrap a mount inside <div id="root"> (static / Netlify CSR).
@@ -67,6 +70,7 @@ function RootComponent() {
         <Outlet />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }
