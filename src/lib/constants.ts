@@ -1,4 +1,12 @@
+import siteConfig from "../../site.config.json";
+
 export const COMPANY_NAME = "GRT Kariakoo Company Limited";
+
+/** Canonical origin — override with VITE_SITE_URL in production builds */
+export const SITE_URL = (
+  import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") ??
+  siteConfig.url.replace(/\/$/, "")
+);
 export const COMPANY_SHORT = "Generator Kariakoo Company Ltd";
 
 export const PHONE_PRIMARY = "+255 753 575 555";
