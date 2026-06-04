@@ -8,6 +8,7 @@
     "build": "node scripts/generate-sitemap.mjs && vite build",
     "build:netlify": "node scripts/generate-sitemap.mjs && vite build && node scripts/write-netlify-index.mjs",
     "sitemap": "node scripts/generate-sitemap.mjs",
+    "fix:netlify-dns": "node scripts/fix-netlify-dns.mjs",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "deploy": "npm run build && wrangler deploy",
