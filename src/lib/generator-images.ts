@@ -1,7 +1,7 @@
 /** Generator category images matched to kVA range */
-import generatorSmall from "@/assets/generators/generator-small.png";
-import generatorMedium from "@/assets/generators/generator-medium.png";
-import generatorHeavy from "@/assets/generators/generator-heavy.png";
+import generatorSmall from "@/assets/optimized/generator-small.webp";
+import generatorMedium from "@/assets/optimized/generator-medium.webp";
+import generatorHeavy from "@/assets/optimized/generator-heavy.webp";
 
 export const GENERATOR_IMAGES = {
   small: generatorSmall,

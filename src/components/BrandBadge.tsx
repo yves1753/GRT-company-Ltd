@@ -12,6 +12,8 @@ export function BrandBadge({ brand, variant = "pill" }: BrandBadgeProps) {
         <img
           src={brand.logo}
           alt={`${brand.name} logo`}
+          width={brand.width}
+          height={brand.height}
           className="h-8 w-auto max-w-[120px] object-contain opacity-90 group-hover:opacity-100 transition-opacity dark:brightness-110"
           loading="lazy"
           decoding="async"
@@ -29,6 +31,8 @@ export function BrandBadge({ brand, variant = "pill" }: BrandBadgeProps) {
         src={brand.logo}
         alt=""
         aria-hidden
+        width={brand.width}
+        height={brand.height}
         className="h-7 w-auto max-w-[100px] object-contain shrink-0 opacity-90 group-hover:opacity-100 transition-opacity dark:brightness-110"
         loading="lazy"
         decoding="async"

@@ -17,7 +17,7 @@ import {
   WORKING_HOURS_DETAIL,
 } from "@/lib/constants";
 import { SERVICES } from "@/lib/site-data";
-import heroImg from "@/assets/generator-hero.png";
+import heroImg from "@/assets/optimized/generator-hero-768.webp";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -60,6 +60,9 @@ function Contact() {
               alt="GRT Kariakoo office and generator equipment"
               className="w-full h-64 lg:h-72 object-cover"
               loading="lazy"
+              decoding="async"
+              width={768}
+              height={768}
             />
             <div className="p-5 border-t border-border">
               <p className="font-semibold">{ADDRESS_LINES[0]}</p>

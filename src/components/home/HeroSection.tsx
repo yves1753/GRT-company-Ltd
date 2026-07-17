@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle, Phone } from "lucide-react";
-import heroImg from "@/assets/generator-hero.png";
+import hero480 from "@/assets/optimized/generator-hero-480.webp";
+import hero768 from "@/assets/optimized/generator-hero-768.webp";
+import hero1024 from "@/assets/optimized/generator-hero-1024.webp";
 import { COMPANY_SHORT, WHATSAPP_URL } from "@/lib/constants";
 import {
   HERO_HEADLINE,
@@ -16,10 +18,16 @@ export function HeroSection() {
       {/* Background */}
       <div className="absolute inset-0 z-0" aria-hidden>
         <img
-          src={heroImg}
+          src={hero1024}
+          srcSet={`${hero480} 480w, ${hero768} 768w, ${hero1024} 1024w`}
+          sizes="100vw"
           alt=""
+          width={1024}
+          height={1024}
           className="h-full w-full object-cover"
           loading="eager"
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 bg-gradient-to-r from-[oklch(0.12_0.02_240/0.95)] via-[oklch(0.14_0.02_240/0.75)] to-[oklch(0.14_0.02_240/0.4)]" />

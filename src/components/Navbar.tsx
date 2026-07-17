@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/grt-logo.png";
+import logo from "@/assets/optimized/grt-logo.webp";
 import { WHATSAPP_URL } from "@/lib/constants";
 
 const pageLinks = [
@@ -27,6 +27,10 @@ export function Navbar() {
           <img
             src={logo}
             alt="GRT Kariakoo Company Limited logo"
+            width={160}
+            height={155}
+            loading="eager"
+            decoding="async"
             className="h-12 w-auto object-contain group-hover:scale-105 transition-transform"
           />
         </Link>

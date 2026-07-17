@@ -25,7 +25,7 @@ export function VideoShowcase() {
           className="w-full h-full object-contain"
           controls
           playsInline
-          preload="metadata"
+          preload="none"
           poster=""
         >
           <source src={active.src} type="video/mp4" />
@@ -54,7 +54,7 @@ export function VideoShowcase() {
               className="w-full h-full object-cover pointer-events-none"
               muted
               playsInline
-              preload="metadata"
+              preload="none"
             />
             <div className="absolute inset-0 bg-black/40 flex items-center justify-center group-hover:bg-black/25 transition-colors">
               <Play className="h-8 w-8 text-white opacity-90" />

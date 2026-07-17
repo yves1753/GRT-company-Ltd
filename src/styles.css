@@ -190,6 +190,19 @@
 
 html { scroll-behavior: smooth; }
 
+/* Skip layout/paint work for distant homepage sections while preserving space. */
+main section:not(:first-child) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
+@media (max-width: 767px) {
+  .glass,
+  .glass-card {
+    backdrop-filter: blur(8px);
+  }
+}
+
 /* Ensure page content is visible even if animation libs fail */
 main {
   color: var(--color-foreground);

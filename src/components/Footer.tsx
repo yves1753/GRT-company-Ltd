@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
-import logo from "@/assets/grt-logo.png";
+import logo from "@/assets/optimized/grt-logo.webp";
 import {
   ADDRESS_LINES,
   COMPANY_NAME,
@@ -19,7 +19,7 @@ export function Footer() {
     <footer className="border-t border-border bg-card/40 mt-20">
       <div className="max-w-7xl mx-auto px-6 py-14 grid md:grid-cols-4 gap-10">
         <div>
-          <img src={logo} alt={COMPANY_NAME} className="h-16 w-auto object-contain mb-4" />
+          <img src={logo} alt={COMPANY_NAME} width={160} height={155} className="h-16 w-auto object-contain mb-4" loading="lazy" decoding="async" />
           <p className="text-sm font-medium">{COMPANY_SHORT}</p>
           <p className="text-sm text-muted-foreground mt-2">
             Industrial power solutions — generators, ATS, rentals & nationwide support across Tanzania.

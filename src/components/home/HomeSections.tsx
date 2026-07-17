@@ -38,7 +38,7 @@ import { COMPANY_SHORT, INSTAGRAM_URL, WHATSAPP_URL } from "@/lib/constants";
 import { VideoShowcase } from "@/components/home/VideoShowcase";
 import { InstagramIcon } from "@/components/icons/InstagramIcon";
 import { GENERATOR_IMAGES } from "@/lib/generator-images";
-import generatorReal from "@/assets/generator-real.png";
+import generatorReal from "@/assets/optimized/generator-real.webp";
 
 export function OverviewSection() {
   return (
@@ -76,7 +76,7 @@ export function OverviewSection() {
           </div>
 
           <div className="industrial-frame overflow-hidden">
-            <img src={generatorReal} alt="GRT industrial generator and power equipment Tanzania" className="w-full h-80 object-cover" loading="lazy" />
+            <img src={generatorReal} alt="GRT industrial generator and power equipment Tanzania" width={500} height={500} className="w-full h-80 object-cover" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -208,7 +208,7 @@ export function TrustSection() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
           {PROJECT_GALLERY.map((photo, i) => (
             <figure key={photo.title} className="industrial-frame overflow-hidden group">
-              <img src={photo.image} alt={photo.title} className="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src={photo.image} alt={photo.title} width={900} height={600} className="h-40 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <figcaption className="p-3">
                 <p className="text-xs font-semibold">{photo.title}</p>
                 <p className="text-[10px] text-muted-foreground">{photo.location}</p>
@@ -315,6 +315,9 @@ export function GeneratorsSection() {
                 alt={`${cat.title} — ${cat.range} diesel generator`}
                 className="h-52 w-full object-cover object-center bg-black/20 group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
+                decoding="async"
+                width={529}
+                height={422}
               />
               <div className="p-6">
                 <p className="text-primary text-sm font-bold tracking-wide">{cat.range}</p>
@@ -377,7 +380,7 @@ export function ProjectsSection() {
         <div className="grid md:grid-cols-2 gap-6">
           {PROJECTS.map((p, i) => (
             <div key={p.title} className="industrial-frame overflow-hidden group">
-              <img src={p.image} alt={p.title} className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <img src={p.image} alt={p.title} width={800} height={534} className="h-48 w-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" decoding="async" />
               <div className="p-6">
                 <div className="flex justify-between gap-4 mb-2">
                   <h3 className="font-bold text-lg leading-snug">{p.title}</h3>

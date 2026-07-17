@@ -1,4 +1,4 @@
-import hotelSolarInstallation from "@/assets/projects/hotel-solar-installation.png";
+import hotelSolarInstallation from "@/assets/optimized/hotel-solar-installation.webp";
 
 import {
   Zap,

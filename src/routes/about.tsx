@@ -11,7 +11,7 @@ import {
   WHY_CHOOSE_GRT,
 } from "@/lib/site-data";
 import { COMPANY_NAME, COMPANY_SHORT, SEO_KEYWORDS, WHATSAPP_URL } from "@/lib/constants";
-import generatorReal from "@/assets/generator-real.png";
+import generatorReal from "@/assets/optimized/generator-real.webp";
 import { CheckCircle2, MessageCircle } from "lucide-react";
 
 export const Route = createFileRoute("/about")({
@@ -61,7 +61,7 @@ function About() {
             </p>
           </div>
           <div className="industrial-frame overflow-hidden">
-            <img src={generatorReal} alt="GRT Kariakoo generator equipment Dar es Salaam" className="w-full h-80 object-cover" loading="lazy" />
+            <img src={generatorReal} alt="GRT Kariakoo generator equipment Dar es Salaam" width={500} height={500} className="w-full h-80 object-cover" loading="lazy" decoding="async" />
           </div>
         </div>
       </section>
