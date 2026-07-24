@@ -22,6 +22,7 @@ if (!SITE_URL.startsWith("https://")) {
 const routes = [
   { path: "/", changefreq: "weekly", priority: "1.0" },
   { path: "/services", changefreq: "monthly", priority: "0.9" },
+  { path: "/fleet", changefreq: "monthly", priority: "0.9" },
   { path: "/about", changefreq: "monthly", priority: "0.8" },
   { path: "/contact", changefreq: "monthly", priority: "0.8" },
 ];

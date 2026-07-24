@@ -7,6 +7,7 @@ import { WHATSAPP_URL } from "@/lib/constants";
 const pageLinks = [
   { to: "/", label: "Home" },
   { to: "/services", label: "Services" },
+  { to: "/fleet", label: "Fleet" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
