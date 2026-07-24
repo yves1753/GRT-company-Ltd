@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, MessageCircle } from "lucide-react";
+import { FleetImage } from "@/components/fleet/FleetImage";
 import { SectionHeading } from "@/components/SectionHeading";
 import { COMPANY_NAME, WHATSAPP_URL } from "@/lib/constants";
 import { FLEET } from "@/lib/fleetData";
@@ -43,13 +44,8 @@ function Fleet() {
               className="group industrial-frame overflow-hidden transition-colors hover:border-primary/40"
             >
               <div className="aspect-[4/3] overflow-hidden bg-white">
-                <img
-                  src={rig.image}
-                  alt={`${rig.name} drilling rig`}
-                  width={900}
-                  height={675}
-                  loading="lazy"
-                  decoding="async"
+                <FleetImage
+                  rig={rig}
                   className="h-full w-full object-contain p-3 transition-transform duration-500 group-hover:scale-[1.03]"
                 />
               </div>
