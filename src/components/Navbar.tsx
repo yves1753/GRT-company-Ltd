@@ -13,9 +13,9 @@ const pageLinks = [
 ] as const;
 
 const sectionLinks = [
-  { href: "/#services", label: "Solutions" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#generators", label: "Generators" },
+  { hash: "services", label: "Solutions" },
+  { hash: "projects", label: "Projects" },
+  { hash: "generators", label: "Generators" },
 ] as const;
 
 export function Navbar() {
@@ -41,6 +41,7 @@ export function Navbar() {
             <Link
               key={l.to}
               to={l.to}
+              preload="intent"
               className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
               activeProps={{ className: "px-3 py-2 rounded-md text-sm font-medium text-primary" }}
               activeOptions={{ exact: true }}
@@ -49,9 +50,9 @@ export function Navbar() {
             </Link>
           ))}
           {sectionLinks.map((l) => (
-            <a key={l.href} href={l.href} className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            <Link key={l.hash} to="/" hash={l.hash} className="px-3 py-2 rounded-md text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               {l.label}
-            </a>
+            </Link>
           ))}
           <a
             href={WHATSAPP_URL}
@@ -61,7 +62,7 @@ export function Navbar() {
           >
             <MessageCircle className="h-4 w-4" /> WhatsApp
           </a>
-          <Link to="/contact" className="ml-2 px-5 py-2 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors">
+          <Link to="/contact" preload="intent" className="ml-2 px-5 py-2 rounded-md bg-primary text-primary-foreground text-sm font-semibold hover:bg-primary/90 transition-colors">
             Get Quote
           </Link>
         </nav>
@@ -75,14 +76,14 @@ export function Navbar() {
         <div className="lg:hidden border-t border-border bg-background/95">
           <div className="px-6 py-4 flex flex-col gap-2">
             {pageLinks.map((l) => (
-              <Link key={l.to} to={l.to} className="py-2 text-sm font-medium" onClick={() => setOpen(false)}>
+              <Link key={l.to} to={l.to} preload="intent" className="py-2 text-sm font-medium" onClick={() => setOpen(false)}>
                 {l.label}
               </Link>
             ))}
             {sectionLinks.map((l) => (
-              <a key={l.href} href={l.href} className="py-2 text-sm font-medium" onClick={() => setOpen(false)}>
+              <Link key={l.hash} to="/" hash={l.hash} className="py-2 text-sm font-medium" onClick={() => setOpen(false)}>
                 {l.label}
-              </a>
+              </Link>
             ))}
             <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="py-2 text-sm font-medium text-[#25D366]">
               WhatsApp Us

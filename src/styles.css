@@ -199,7 +199,8 @@ main section:not(:first-child) {
 @media (max-width: 767px) {
   .glass,
   .glass-card {
-    backdrop-filter: blur(8px);
+    backdrop-filter: none;
+    background: oklch(0.18 0.02 240 / 0.94);
   }
 }
 

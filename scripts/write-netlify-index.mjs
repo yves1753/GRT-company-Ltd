@@ -28,6 +28,7 @@ function pickLargestMatching(dir, prefix, suffix) {
 }
 
 const mainJs = pickLargestMatching(assetsDir, "index-", ".js");
+const mainCss = pickLargestMatching(assetsDir, "styles-", ".css");
 
 const html = `<!doctype html>
 <html lang="en" class="dark">
@@ -38,7 +39,10 @@ const html = `<!doctype html>
     <meta name="description" content="Sales, rentals, repairs and installation of generators and power electronics in Dar es Salaam, Tanzania." />
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" />
+    <link rel="stylesheet" crossorigin href="/assets/${mainCss}" />
   </head>
   <body>
     <div id="root"></div>
@@ -48,4 +52,4 @@ const html = `<!doctype html>
 `;
 
 fs.writeFileSync(path.join(clientDir, "index.html"), html, "utf8");
-console.log(`Wrote dist/client/index.html (entry: assets/${mainJs})`);
+console.log(`Wrote dist/client/index.html (entry: assets/${mainJs}, stylesheet: assets/${mainCss})`);
